@@ -9,14 +9,19 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.cookbook.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import io.paperdb.Paper;
 
 public class activity_vhod extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class activity_vhod extends AppCompatActivity {
     private ProgressDialog loadingBar;
 
     private String parentDbName ="Users";
+    private RadioButton radioButtonRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,9 @@ public class activity_vhod extends AppCompatActivity {
         loginPhoneVhod = (EditText) findViewById(R.id.login_phone_vhod);
         passwordPhoneVhod = (EditText) findViewById(R.id.password_phone_vhod);
         loadingBar = new ProgressDialog(this);
+        radioButtonRememberMe = (RadioButton) findViewById(R.id.radioButton);
+        Paper.init(this);
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +77,14 @@ public class activity_vhod extends AppCompatActivity {
     }
 
     private void ValidateUser(String loginPhone, String passwordPhone) {
+
+        if(radioButtonRememberMe.isChecked())
+        {
+            Paper.book().write(Prevalent.UserPhoneKey, loginPhone);
+            Paper.book().write(Prevalent.UserPasswordKey, passwordPhone);
+        }
+
+
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
