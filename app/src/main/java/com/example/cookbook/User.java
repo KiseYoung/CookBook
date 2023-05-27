@@ -1,5 +1,7 @@
 package com.example.cookbook;
 
+import java.util.HashMap;
+
 public class User {
     private String name,phone,password;
 
@@ -37,5 +39,10 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public String updateChildren(HashMap<String, Object> userMap) {
+        return null;
     }
 }

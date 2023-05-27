@@ -5,4 +5,6 @@
     <color name="orange">#ffb433</color>
     <color name="gray">#f0f0f0</color>
     <color name="gray_text">#b4b4b4</color>
+    <color name="yellow">#ffe712</color>
+    <color name="orange_center">#fff940</color>
 </resources>
