@@ -262,6 +262,19 @@
         app:layout_constraintVertical_bias="0.895"
         app:srcCompat="@drawable/plusiik" />
 
+    <Button
+        android:id="@+id/btn_save_cook"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/orange"
+        android:text="Сохранить"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
 <!--    <androidx.appcompat.widget.Toolbar-->
 <!--        android:id="@+id/toolbar"-->
 <!--        android:layout_width="247dp"-->
@@ -285,19 +298,5 @@
 <!--        app:layout_constraintStart_toStartOf="@+id/toolbar"-->
 <!--        app:layout_constraintTop_toTopOf="@+id/toolbar" />-->
 
-
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:id="@+id/btn_save_cook"-->
-<!--        android:layout_width="247dp"-->
-<!--        android:layout_height="55dp"-->
-<!--        android:background="@drawable/orange_gradient"-->
-<!--        android:backgroundTint="@drawable/orange_gradient"-->
-<!--        android:text="Сохранить"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

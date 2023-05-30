@@ -20,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.cookbook.Adapter.ShagiAdapter;
 import com.example.cookbook.Prevalent.Prevalent;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.auth.api.signin.internal.Storage;
@@ -44,13 +43,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AddCook_Activity extends AppCompatActivity {
 
-    //String []data = {"" , "Hi", "Welcome"};
-    //int counter = 0;
-
-    //private static Context This;
+    private static Context This;
     private ImageView BackAddCook, PhotoAdd, CameraAdd, GalleryAdd;
 
-    private AppCompatButton bytb;
     private Bitmap bitmap;
     private String checker = "";
     private StorageReference StorageCookPictureRef;
@@ -67,27 +62,11 @@ public class AddCook_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cook);
 
-        bytb = findViewById(R.id.btn_save_cook);
 
         PhotoAdd = (ImageView) findViewById(R.id.photo_add);
         BackAddCook = (ImageView) findViewById(R.id.btn_back_addcook);
         CameraAdd = (ImageView) findViewById(R.id.image_camera_icon);
         GalleryAdd = (ImageView) findViewById(R.id.image_gallery_icon);
-
-//        List<String> items = new LinkedList<>();
-//        items.add("Code It");
-//
-//        RecyclerView recyclerView = findViewById(R.id.recycler_add);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        ShagiAdapter adapter = new ShagiAdapter(items);
-//        recyclerView.setAdapter(adapter);
-//
-//        findViewById(R.id.btn_save_cook).setOnClickListener(view -> {
-//            items.add(data[counter%3]);
-//            counter++;
-//            adapter.notifyItemRemoved(items.size()-1);
-//        });
-//        getId = user.get(SessionManager.ID);
 
         GalleryAdd.setOnClickListener(new View.OnClickListener() {
             @Override
